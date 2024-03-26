@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14  # Specify the Node.js version you want to use
+  pre_build:
+    commands:
+      - npm install  # Install dependencies
+  build:
+    commands:
+      - npm run build  # Example build command for a Node.js application (adjust as needed)
+  post_build:
+    commands:
+      - zip -r app.zip *  # Package your application code into a ZIP file
+artifacts:
+  files:
+    - app.zip  # Specify the location of the ZIP file containing your application code
